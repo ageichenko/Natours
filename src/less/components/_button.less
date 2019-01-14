@@ -1,0 +1,61 @@
+.button,
+.button:link,
+.button:visited {
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    font-size: 1.6rem;
+    display: inline-block;
+    transition: all 0.2s;
+
+    animation-name: moveUp;
+    animation-duration: 1s;
+    
+    &._white {
+        background-color: @color-white;
+        color: @color-grey-dark-2;
+
+        &::after {
+            background-color: @color-white;
+        }
+    }
+
+    &._green {
+        background-color: @color-primary;;
+        color: @color-white;
+
+        &::after {
+            background-color: @color-primary;
+        }
+    }
+
+    &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1rem 2rem rgb(@color-black, 0.2);
+
+        &::after {
+            transform: scale(2);
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0.6rem 1.5rem rgb(@color-black, 0.2);
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: inherit;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.3s;
+    }
+}

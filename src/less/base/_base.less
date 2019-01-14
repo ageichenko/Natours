@@ -1,0 +1,21 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 12px;; // 1rem = 12px
+}
+
+body {
+    box-sizing: border-box;
+    padding: 0rem;
+
+    @media @desktop {
+        padding: 3rem;
+    }
+}
+
