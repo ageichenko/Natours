@@ -1,0 +1,167 @@
+.card {
+    position: relative;
+    display: inline-block;
+    perspective: 150rem;
+    position: relative;
+    height: 52rem;
+
+    &__front,
+    &__back {
+        position: absolute;
+        top: 0;
+        left:0;
+        transition: all .5s ease; 
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 2rem 5rem rgba(@color-black, 0.2);
+    }
+
+    &__front {
+        background-color: @color-white;
+        backface-visibility: hidden;
+    }
+
+    &__back {
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+    }
+
+    &__back-1 {
+        background-image: linear-gradient(
+            to right bottom,
+            @color-secondary-light,
+            @color-secondary-dark
+        );
+    }
+
+    &__back-2 {
+        background-image: linear-gradient(
+            to right bottom,
+            @color-primary-light,
+            @color-primary-dark
+        );
+    }
+
+    &__back-3 {
+        background-image: linear-gradient(
+            to right bottom,
+            @color-tertiary-light,
+            @color-tertiary-dark
+        );
+    }
+
+    &:hover &__front{
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__back{
+        transform: rotateY(0);
+    }
+
+    &__heading {
+        font-size: 3rem;
+        text-transform: uppercase;
+        font-weight: 300;
+        color: @color-white;
+        text-align: right;
+        width: 80%;
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        opacity: 0.9;
+    }
+
+    &__heading-1,
+    &__heading-2,
+    &__heading-3 {
+        box-decoration-break: clone;
+        padding: 1rem 1.5rem;
+    }
+
+    &__heading-1 {
+        background-image: linear-gradient(
+            to right bottom,
+            @color-secondary-light,
+            @color-secondary-dark
+        );
+    }
+
+    &__heading-2 {
+        background-image: linear-gradient(
+            to right bottom,
+            @color-primary-light,
+            @color-primary-dark
+        );
+    }
+
+    &__heading-3 {
+        background-image: linear-gradient(
+            to right bottom,
+            @color-tertiary-light,
+            @color-tertiary-dark
+        );
+    }
+
+    &__details {
+        list-style: none;
+        font-size: 1.6rem;
+        padding: 3rem;
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    &__details-item {
+        line-height: 4rem;
+        border-bottom: 1px solid @color-grey-light-2;
+    }
+
+    &__picture {
+        height: 23rem;
+        background-size: cover;
+        background-blend-mode: screen;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    }
+
+    &__picture-1 {
+        background-image: linear-gradient(
+            to right bottom,
+            @color-secondary-light,
+            @color-secondary-dark
+        ),
+        url("../img/nat-5.jpg");
+    }
+
+    &__picture-2 {
+        background-image: linear-gradient(
+            to right bottom,
+            @color-primary-light,
+            @color-primary-dark
+        ),
+        url("../img/nat-6.jpg");
+    }
+
+    &__picture-3 {
+        background-image: linear-gradient(
+            to right bottom,
+            @color-tertiary-light,
+            @color-tertiary-dark
+        ),
+        url("../img/nat-7.jpg");
+    }
+
+    &__price-box {
+        color: @color-white;
+        margin: 10rem 0;
+    }
+
+    &__price-only {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+    }
+
+    &__price-value {
+        font-size: 6rem;
+        font-weight: 100;
+    }
+}

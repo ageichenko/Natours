@@ -1,5 +1,5 @@
 .row {
-    max-width: 95%;
+    max-width: @grid-width;
     margin: 0 auto;
 
     &:not(:last-child) {
@@ -14,7 +14,7 @@
         display: inline-block;
         vertical-align: top;
         &:not(:last-child) {
-            margin-right: @offset-horizontal - 1;
+            margin-right: @offset-horizontal - 0.2;
         }
 
         @media @phone-strict {
@@ -23,7 +23,7 @@
     }
 
     @media @desktop {
-        max-width: 75%;
+        max-width: @grid-width;
     } 
 
     &::after {
